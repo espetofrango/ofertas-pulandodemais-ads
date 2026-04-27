@@ -5,21 +5,25 @@
 <section class="hero" id="hero">
   <div class="hero-grain"></div>
   <div class="hero-content container">
-    <div class="hero-badge animate-hero" style="--delay: 0s;">
-      🎮 Promoção Maio · Pulando Demais
+    <div class="hero-logo animate-hero" style="--delay: 0s;">
+      <img src="/logo.jpg" alt="Pulando Demais Logo" width="120" height="120" />
     </div>
 
-    <h1 class="hero-headline animate-hero" style="--delay: 0.1s;">
+    <div class="hero-badge animate-hero" style="--delay: 0.1s;">
+      🔥 Promoção de Maio
+    </div>
+
+    <h1 class="hero-headline animate-hero" style="--delay: 0.2s;">
       Monte a Melhor<br />
       <span class="highlight">Festa de Jogos!</span>
     </h1>
 
-    <p class="hero-subtitle animate-hero" style="--delay: 0.2s;">
+    <p class="hero-subtitle animate-hero" style="--delay: 0.3s;">
       Aluguel de mesas de jogos e jogos eletrônicos para festas e eventos no Rio de Janeiro. 
       Totó, sinuca, fliperama, karaokê e muito mais. Entrega, montagem e monitoria inclusos!
     </p>
 
-    <div class="hero-buttons animate-hero" style="--delay: 0.3s;">
+    <div class="hero-buttons animate-hero" style="--delay: 0.4s;">
       <a
         href="https://wa.me/5521964370625?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20quero%20usar%20o%20cupom:%20OFERTA-MAIO-PD%20para%20garantir%20o%20desconto%20da%20semana!"
         target="_blank"
@@ -34,7 +38,7 @@
       </a>
     </div>
 
-    <div class="hero-social-proof animate-hero" style="--delay: 0.4s;">
+    <div class="hero-social-proof animate-hero" style="--delay: 0.5s;">
       <div class="avatars">
         <span class="avatar" style="background: var(--color-accent);">🎯</span>
         <span class="avatar" style="background: var(--color-primary);">🎮</span>
@@ -43,7 +47,7 @@
       <span class="social-text">Mais de 5.000 festas realizadas no RJ</span>
     </div>
 
-    <div class="hero-card animate-hero" style="--delay: 0.5s;">
+    <div class="hero-card animate-hero" style="--delay: 0.6s;">
       <div class="card-glow"></div>
       <span class="card-number">98%</span>
       <span class="card-label">dos clientes recomendam</span>
@@ -85,19 +89,34 @@
     gap: 24px;
   }
 
+  .hero-logo {
+    margin-bottom: 8px;
+  }
+
+  .hero-logo img {
+    width: clamp(90px, 18vw, 130px);
+    height: auto;
+    border-radius: var(--radius-sm);
+    background: white;
+    padding: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+
   .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
+    gap: 10px;
+    padding: 12px 32px;
     border-radius: 100px;
-    border: 1.5px solid var(--color-accent);
-    background: rgba(255, 212, 0, 0.1);
+    border: 3px solid var(--color-accent);
+    background: rgba(255, 212, 0, 0.2);
     color: var(--color-accent);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
     backdrop-filter: blur(8px);
+    text-transform: uppercase;
+    box-shadow: 0 0 30px rgba(255, 212, 0, 0.3);
   }
 
   .hero-headline {
