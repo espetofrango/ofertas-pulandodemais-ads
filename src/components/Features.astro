@@ -137,8 +137,9 @@ Mesa exclusiva para uso recreativo.`,
     </div>
 
     <div class="features-note animate-on-scroll">
-      <p>⚡ <strong>Todos os brinquedos</strong> incluem entrega, montagem e desmontagem. Período padrão de locação: <strong>4/5 horas de festa ou a combinar , Não transportamos por escada .</strong></p>
-      <p>🔌 Jogos eletrônicos necessitam de ponto de energia elétrica (110V ou 220V). Consulte na reserva.</p>
+      <p>⚡ <strong>Todos os brinquedos</strong> incluem entrega, montagem e desmontagem. Período padrão de locação: <strong>4/5 horas de festa ou a combinar.</strong></p>
+      <p class="no-stairs-warning">⚠️ <strong>Não transportamos por escada.</strong></p>
+      <p>🔌 Jogos eletrônicos necessitam de ponto de energia elétrica (110V ou 220V). É necessário local coberto abrigado da chuva e do sol para a montagem. Consulte na reserva.</p>
     </div>
   </div>
 </section>
@@ -350,6 +351,17 @@ Mesa exclusiva para uso recreativo.`,
 
   .features-note p + p {
     margin-top: 4px;
+  }
+
+  .no-stairs-warning {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 24px;
+    background: rgba(227, 6, 19, 0.08);
+    border: 1px solid var(--color-danger);
+    color: var(--color-danger);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
   }
 
   @media (max-width: 1024px) {
