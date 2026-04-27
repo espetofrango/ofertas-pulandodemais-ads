@@ -1,0 +1,242 @@
+---
+// arquivo: src/components/Testimonials.astro
+
+const testimonials = [
+  {
+    name: 'Ana Rodrigues',
+    initials: 'AR',
+    color: '#0073CF',
+    text: 'A Pulando Demais mais uma vez me surpreendeu, entrega pontual e me gerou muita tranquilidade em todo o processo de locação.',
+    featured: false,
+  },
+  {
+    name: 'Bruno Carvalho',
+    initials: 'BC',
+    color: '#E30613',
+    text: 'Fiquei horas para escolher em qual empresa alugar, mas uma amiga me disse que já havia alugado com a Pulando Demais e aí tomei minha decisão. Não me arrependi, nota 10 para eles, alugarei mais vezes.',
+    featured: true,
+  },
+  {
+    name: 'Camila Torres',
+    initials: 'CT',
+    color: '#FFD400',
+    text: 'Minha igreja estava à procura de um touro mecânico, e eles foram os únicos que conseguiram nos sanar dúvidas e realmente demonstraram conhecimento técnico. Foi um sucesso nosso evento. Valeu!',
+    featured: false,
+  },
+];
+---
+
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <div class="test-header">
+      <span class="test-badge">💬 Depoimentos</span>
+      <h2 class="section-title test-title">
+        O Que Nossos <span class="highlight">Clientes Dizem</span>
+      </h2>
+      <p class="section-subtitle test-subtitle">
+        Veja por que milhares de famílias confiam na Pulando Demais para seus eventos.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      {testimonials.map((t, index) => (
+        <div class={`testimonial-card ${t.featured ? 'featured' : ''} animate-on-scroll`} style={`--index: ${index}`}>
+          <div class="quote-decoration">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">{t.text}</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style={`background: ${t.color}`}>
+              {t.initials}
+            </div>
+            <div class="author-info">
+              <strong class="author-name">{t.name}</strong>
+              <span class="author-role">Cliente Pulando Demais</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer3 = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const index = parseInt(el.style.getPropertyValue('--index') || '0');
+          setTimeout(() => {
+            el.classList.add('visible');
+          }, index * 150);
+          observer3.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll('.testimonials .animate-on-scroll').forEach((el) => {
+    observer3.observe(el);
+  });
+</script>
+
+<style>
+  .testimonials {
+    padding: var(--section-padding) 0;
+    background: linear-gradient(180deg, #0A1628 0%, #0D1F3C 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .test-header {
+    text-align: center;
+    margin-bottom: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .test-badge {
+    display: inline-flex;
+    padding: 6px 18px;
+    border-radius: 100px;
+    background: rgba(255, 212, 0, 0.1);
+    color: var(--color-accent);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 212, 0, 0.2);
+  }
+
+  .test-title {
+    color: var(--color-text-light);
+  }
+
+  .test-title .highlight {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .test-subtitle {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    position: relative;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius);
+    transition: all 0.4s ease;
+  }
+
+  .testimonial-card:hover {
+    border-color: rgba(0, 115, 207, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .testimonial-card.featured {
+    transform: scale(1.05);
+    background: rgba(0, 115, 207, 0.08);
+    border-color: rgba(0, 115, 207, 0.2);
+    box-shadow: 0 16px 48px rgba(0, 115, 207, 0.15);
+  }
+
+  .testimonial-card.featured:hover {
+    transform: scale(1.05) translateY(-4px);
+  }
+
+  .quote-decoration {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-family: var(--font-display);
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--color-primary);
+    opacity: 0.1;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .stars {
+    color: var(--color-accent);
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-text {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .author-name {
+    color: var(--color-text-light);
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .author-role {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+  }
+
+  @media (max-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card.featured {
+      transform: none;
+    }
+
+    .testimonial-card.featured:hover {
+      transform: translateY(-4px);
+    }
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+// arquivo: src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pulando Demais — Ofertas de Aluguel de Brinquedos" description="Página de ofertas de aluguel de brinquedos da Pulando Demais Entretenimento.">
+  <main class="home">
+    <div class="home-container">
+      <div class="home-glow"></div>
+      <img
+        src="/logo.jpg"
+        alt="Logo Pulando Demais Entretenimento"
+        class="home-logo"
+        width="200"
+        height="200"
+      />
+      <p class="home-text">
+        Esta é a página de Ofertas de aluguel de brinquedos da Pulando Demais
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #F8FBFF 0%, #EDF4FC 50%, #F5F5F5 100%);
+    padding: 40px 24px;
+  }
+
+  .home-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+    animation: fadeIn 1.2s ease;
+  }
+
+  .home-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 115, 207, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .home-logo {
+    position: relative;
+    z-index: 1;
+    width: clamp(140px, 30vw, 220px);
+    height: auto;
+    border-radius: var(--radius);
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .home-text {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-body);
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    max-width: 420px;
+    line-height: 1.7;
+    animation: fadeUp 0.8s ease 0.5s both;
+  }
+</style>

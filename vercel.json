@@ -1,3 +1,6 @@
 {
-  "version": 2
+  "framework": "astro",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
