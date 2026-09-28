@@ -3,20 +3,93 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Pulando Demais — Ofertas de Aluguel de Brinquedos" description="Página de ofertas de aluguel de brinquedos da Pulando Demais Entretenimento.">
+<Layout
+  title="Pulando Demais — Ofertas de Aluguel de Brinquedos | Dia das Crianças 2026"
+  description="Página oficial de ofertas da Pulando Demais Entretenimento. Aluguel de brinquedos infláveis, jogos e combos especiais para o Dia das Crianças 2026."
+>
   <main class="home">
-    <div class="home-container">
-      <div class="home-glow"></div>
-      <img
-        src="/logo.jpg"
-        alt="Logo Pulando Demais Entretenimento"
-        class="home-logo"
-        width="200"
-        height="200"
-      />
-      <p class="home-text">
-        Esta é a página de Ofertas de aluguel de brinquedos da Pulando Demais
-      </p>
+    <!-- Glow Effects Background -->
+    <div class="home-glow-primary"></div>
+    <div class="home-glow-accent"></div>
+
+    <div class="container home-container">
+      <!-- Logo Header -->
+      <div class="logo-wrapper">
+        <img
+          src="/logo.jpg"
+          alt="Logo Pulando Demais Entretenimento"
+          class="home-logo"
+          width="220"
+          height="80"
+        />
+      </div>
+
+      <div class="welcome-header">
+        <h1 class="home-title">
+          Portal de Ofertas <span class="highlight">Pulando Demais</span>
+        </h1>
+        <p class="home-subtitle">
+          Escolha a promoção desejada para conferir a tabela completa de pacotes de locação:
+        </p>
+      </div>
+
+      <!-- MAIN FEATURED CARD: DIA DAS CRIANÇAS 2026 (EXTREMELY EVIDENT ICON & BUTTON) -->
+      <a href="/dia-das-criancas" class="featured-banner-card" aria-label="Acessar Tabela Pacotes Dia das Crianças 2026">
+        <div class="banner-badge">
+          <span class="badge-pulse"></span>
+          <span>🔥 DESTAQUE ESPECIAL 2026</span>
+        </div>
+
+        <div class="banner-content">
+          <div class="banner-icon-wrapper">
+            <!-- Evident Glowing Icon for Dia das Crianças -->
+            <div class="banner-icon-bg"></div>
+            <span class="banner-emoji" role="img" aria-label="Balões e Festa">🎈</span>
+            <div class="banner-sparkle">✨</div>
+          </div>
+
+          <div class="banner-text">
+            <span class="banner-date">12 DE OUTUBRO DE 2026</span>
+            <h2 class="banner-title">PACOTES DIA DAS CRIANÇAS 2026</h2>
+            <p class="banner-desc">
+              Tabela oficial de pacotes fechados por logística! Combos com Touro Mecânico, Tobogãs Infláveis, Atrações Aquáticas e Linha Games.
+            </p>
+          </div>
+        </div>
+
+        <div class="banner-cta">
+          <span>VER TABELA COMPLETA DE PACOTES</span>
+          <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- Secondary Links / Options -->
+      <div class="other-promos">
+        <h3 class="other-title">Outras Promoções Disponíveis</h3>
+        <div class="other-grid">
+          <a href="/promo-jogos-maio" class="secondary-card">
+            <div class="sec-card-header">
+              <span class="sec-emoji">🎮</span>
+              <h4>Promoção Jogos & Eletrônicos</h4>
+            </div>
+            <p>Aluguel de mesas de jogos (sinuca, totó, ping pong, air game) e eletrônicos.</p>
+            <span class="sec-link">Acessar Promoção &rarr;</span>
+          </a>
+
+          <a href="https://wa.me/5521964370625?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20de%20brinquedos." target="_blank" rel="noopener noreferrer" class="secondary-card whatsapp-card">
+            <div class="sec-card-header">
+              <span class="sec-emoji">💬</span>
+              <h4>Atendimento Personalizado</h4>
+            </div>
+            <p>Fale direto com nossa equipe no WhatsApp para orçamentos sob medida.</p>
+            <span class="sec-link wa-link">Chamar no WhatsApp &rarr;</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </main>
 </Layout>
@@ -24,55 +97,339 @@ import Layout from '../layouts/Layout.astro';
 <style>
   .home {
     min-height: 100vh;
+    background: linear-gradient(180deg, #0F172A 0%, #002A54 40%, #0073CF 100%);
+    padding: 48px 20px 80px 20px;
+    position: relative;
+    overflow: hidden;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, #F8FBFF 0%, #EDF4FC 50%, #F5F5F5 100%);
-    padding: 40px 24px;
   }
 
-  .home-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    text-align: center;
-    animation: fadeIn 1.2s ease;
-  }
-
-  .home-glow {
+  .home-glow-primary {
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px;
-    height: 320px;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 115, 207, 0.4) 0%, transparent 70%);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 115, 207, 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
 
-  .home-logo {
-    position: relative;
-    z-index: 1;
-    width: clamp(140px, 30vw, 220px);
-    height: auto;
-    border-radius: var(--radius);
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
-    animation: fadeUp 0.8s ease 0.2s both;
+  .home-glow-accent {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 212, 0, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  .home-text {
+  .home-container {
     position: relative;
     z-index: 1;
-    font-family: var(--font-body);
-    font-size: clamp(16px, 3vw, 20px);
-    font-weight: 400;
-    color: var(--color-text-secondary);
-    max-width: 420px;
-    line-height: 1.7;
-    animation: fadeUp 0.8s ease 0.5s both;
+    max-width: 860px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Logo */
+  .logo-wrapper {
+    margin-bottom: 24px;
+    background: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .home-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .welcome-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .home-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: #FFFFFF;
+  }
+
+  .home-title .highlight {
+    color: var(--color-accent);
+  }
+
+  .home-subtitle {
+    font-size: clamp(15px, 2vw, 18px);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  /* FEATURED CARD FOR DIA DAS CRIANÇAS */
+  .featured-banner-card {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    text-decoration: none;
+    color: #FFFFFF;
+    box-shadow: 0 0 50px rgba(255, 212, 0, 0.25), 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .featured-banner-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #FFFFFF;
+    box-shadow: 0 0 70px rgba(255, 212, 0, 0.45), 0 28px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Badge Pulse */
+  .banner-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-accent);
+    color: #000000;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    box-shadow: 0 4px 14px rgba(255, 212, 0, 0.4);
+    letter-spacing: 0.5px;
+  }
+
+  .badge-pulse {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-danger);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* Evident Glowing Icon */
+  .banner-icon-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .banner-icon-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #FFD400 0%, #E30613 100%);
+    border-radius: 28px;
+    transform: rotate(-6deg);
+    box-shadow: 0 8px 24px rgba(227, 6, 19, 0.4);
+    transition: transform 0.4s ease;
+  }
+
+  .featured-banner-card:hover .banner-icon-bg {
+    transform: rotate(0deg) scale(1.1);
+  }
+
+  .banner-emoji {
+    position: relative;
+    z-index: 1;
+    font-size: 54px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .banner-sparkle {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 24px;
+    z-index: 2;
+  }
+
+  .banner-text {
+    flex-grow: 1;
+  }
+
+  .banner-date {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .banner-title {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+
+  .banner-desc {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+  }
+
+  /* CTA Button inside Banner */
+  .banner-cta {
+    background: linear-gradient(135deg, #FFD400 0%, #FFB700 100%);
+    color: #000000;
+    padding: 18px 28px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 6px 20px rgba(255, 212, 0, 0.35);
+    transition: all 0.3s ease;
+  }
+
+  .featured-banner-card:hover .banner-cta {
+    background: #FFFFFF;
+    color: var(--color-primary-dark);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+  }
+
+  .cta-arrow {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+  }
+
+  .featured-banner-card:hover .cta-arrow {
+    transform: translateX(6px);
+  }
+
+  /* Other Promos Grid */
+  .other-promos {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .other-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .other-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .secondary-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .secondary-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .sec-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sec-emoji {
+    font-size: 24px;
+  }
+
+  .sec-card-header h4 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .secondary-card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+  }
+
+  .sec-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-top: 4px;
+  }
+
+  .whatsapp-card .wa-link {
+    color: #25D366;
+  }
+
+  @media (max-width: 640px) {
+    .banner-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .banner-badge {
+      align-self: center;
+    }
+
+    .featured-banner-card {
+      padding: 24px 20px;
+    }
+
+    .banner-cta {
+      font-size: 14px;
+      padding: 14px 20px;
+    }
   }
 </style>
